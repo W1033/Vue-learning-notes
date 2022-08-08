@@ -1,0 +1,9 @@
+{
+  "name": "2.6-vue-source-document",
+  "scripts": {
+    "flow": "flow; test $? -eq 0 -o $? -eq 2"
+  },
+  "devDependencies": {
+    "flow-bin": "^0.119.1"
+  }
+}
