@@ -6,9 +6,11 @@
 
 ## Pre-message (前置信息)
 
-本地的第一个 vuepress 静态项目是在 Mathematics-learning 仓库内的 online-docs 文件夹下创建的，开发(dev)、编译(build) 以及部署时都要进入到 online-docs 文件夹下打开命令行，而不是在 Mathematics-learning 仓库下打开命令行。
+在线笔记的仓库是放在了一个名为 `1033-docs` （即 <repo>）的仓库里，
 
+里面放置的为 Github 各仓库中已经有体系和结构的笔记，比如 Mathematics-learning 中的高中数学笔记，1033-master-blog 中的 Quo 文集......
 
+零散内容的笔记仍放置在各自的仓库中。
 
 
 

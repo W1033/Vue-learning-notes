@@ -7,16 +7,17 @@
 
 ## 2 创建在线笔记仓库
 
-在 github 上创建一个名为 w1033-vuepress-blog 的仓库, 将来要访问的所有在线笔记, 都在这个仓库内.
+在 github 上创建一个名为 `1033-docs` 的仓库, 将来要访问的所有在线笔记, 都在这个仓库内.
 
 ## 3 拉取仓库到本地并初始化
 
-拉取第二步创建的 w1033-vuepress-blog 到本地, 然后进入文件夹下, 使用 yarn 或者 npm 包管理器进行初始化
+拉取第二步创建的 1033-docs 到本地, 然后进入文件夹下, 使用 yarn 或者 npm 包管理器进行初始化
 
 ```sh
 yarn init  # npm init
 ```
 ## 4 安装 VuePress 本地依赖
+
 使用以下代码将 VuePress 安装为本地依赖, 官网说不推荐全局安装 VuePress
 ```sh
 yarn add -D vuepress  # npm install -D vuepress
@@ -60,11 +61,12 @@ yarn docs:dev # npm run docs:dev
 
 > 见官网文档
 
-好了，现在我们在 w1033-vuepress-blog 仓库的 `./docs/` 目录下添加上面的`.vuepress` 文件夹，并在其下面创建基本的 `config.js` 文件,`config.js` 中内容在下面添加, 先不要着急. 这里主要说一下, `.vuepress` 文件夹用来存放 vuepress 项目中需要全局使用的配置, 组件, 静态资源等。
+好了，现在我们在 `1033-docs` 仓库的 `./docs/` 目录下添加上面的`.vuepress` 文件夹，并在其下面创建基本的 `config.js` 文件,`config.js` 中内容在下面添加, 先不要着急. 这里主要说一下, `.vuepress` 文件夹用来存放 vuepress 项目中需要全局使用的配置, 组件, 静态资源等。
 
 所以如果拿笔记系统来当做讲解, 英语笔记需要用到的图片肯定不放在这里, 因为英语版块的笔记图片在数学版块中几乎是用不到的, 具体各个版块的笔记要如何放下面会详细讲解.
 
 ## 9 默认页面路由
+
 > 见官网文档 
 
 官网文档注释：
@@ -92,10 +94,4 @@ yarn docs:dev # npm run docs:dev
 > 参见 [配置](https://vuepress.vuejs.org/zh/config/) 来查看所有可配置的选项。
 
 注：上面官网的 `配置` 文件看起来很不方便，我在当前文档的同级目录中创建了同名的 `config.js.md` 配置文件文档，里面详细罗列了各个配置选项，请根据  [配置](https://vuepress.vuejs.org/zh/config/) 官网来查看。
-
-
-
-
-
-## 完整文档见官网文档
 
