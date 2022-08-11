@@ -67,19 +67,26 @@ yarn docs:dev # npm run docs:dev
 
 > <img src="./readme.assets/2022-08-09_103548.png" style="box-shadow:1px 1px 3px 2px #e5e5e5">
 
-根据官网文档创建好目录后，现在我们在 `1033-docs` 仓库的 `./docs/` 目录下添加上面的`.vuepress` 文件夹，并在其下面创建基本的 `config.js` 文件，`config.js` 中内容在下面添加, 先不要着急. 这里主要说一下, `.vuepress` 文件夹用来存放 vuepress 项目中需要全局使用的配置, 组件, 静态资源等。
+根据上图的官网文档，我们在 `1033-docs` 仓库的 `./docs/` 目录下添加上面的`.vuepress` 文件夹，并在其下面创建基本的 `config.js` 文件，`config.js` 中内容在下面添加, 先不要着急. 这里主要说一下, `.vuepress` 文件夹用来存放 vuepress 项目中需要全局使用的配置, 组件, 静态资源等。
 
 ### Add notes:
 
-下面详细说一下笔记中的图片放置，以及在 markdown 中的正确访问方式。
+下面详细说一下笔记中的图片放置，以及在 markdown 中的正确正确路径书写方式。
 
 根据官网的目录结构，静态资源建议放置在 
 
 > `docs/.vuepress/public`: 静态资源目录。
 
-所以图片我们一般的
+建议：`docs/.vuepress/public/assets/` 下放图片，比如数学笔记的图片可以放在 `math-images` 内，英语笔记的图片放在 `english-images` 内。
 
-所以如果拿笔记系统来当做讲解, 英语笔记需要用到的图片肯定不放在这里, 因为英语版块的笔记图片在数学版块中几乎是用不到的, 具体各个版块的笔记要如何放下面会详细讲解.
+在笔记的 markdown 文件中正确书写 img 路径的方式如下
+```html
+<!-- 1033-docs/docs/pages/high-school-math/4.md -->
+<!-- 我们在本地 yarn build 后预览时是不需要添加 1033-docs 的仓库名的，但是如果要部署到 github 的当前仓库，就需要添加绝对路径 `/1033-docs/`，这个配置也即和 congif.js 中的 `base: '/1033-docs/'` 相同 -->
+<img src="/1033-docs/assets/images/4th/1.2-6.png" style="margin-left:0; width:40%;">    
+
+```
+
 
 ## 9 默认页面路由
 
@@ -104,6 +111,10 @@ yarn docs:dev # npm run docs:dev
 
 ### 基本文件
 > 见官网文档：https://vuepress.vuejs.org/zh/guide/basic-config.html#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6
+
+配置 `config.js` 文件
+
+
 
 ### 主题配置
 

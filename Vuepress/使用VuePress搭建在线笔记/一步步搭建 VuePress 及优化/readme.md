@@ -34,13 +34,7 @@
 ```js
 // package.json
 {
-  "name": "online-docs",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:W1033/Mathematics-learning.git",
-  "license": "MIT",
-  "author": "w1033",
-  // ...
+
 }
 ```
 
@@ -49,7 +43,7 @@
 ```js
 // - /online-docs/docs/.vuepress/config.js
 module.exports = {
-    base: '/online-docs/',
+    base: '',
 }
 ```
 
@@ -63,8 +57,8 @@ deploy.sh 文档见下面的
 
 ```sh
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
-# tip: 获得 W1033/Mathematics-learning.git 的方式是可以在命令行中使用： git config -l 命令
-git push -f git@github.com:W1033/Mathematics-learning.git master:gh-pages
+# tip: 获得 W1033/1033-docs.git 的方式是可以在命令行中使用： git config -l 命令
+git push -f git@github.com:W1033/1033-docs.git master:gh-pages
 ```
 接着修改 `package.json` 中的 script 配置
 ```js
@@ -78,9 +72,7 @@ git push -f git@github.com:W1033/Mathematics-learning.git master:gh-pages
 ```
 接着在命令行里执行：`yarn deploy`
 
-执行完毕后，会在当前仓库中生成一个 `gh-pages` 的分支，如下图
-
-![image-20220801215136843](readme.assets/image-20220801215136843.png)
+执行完毕后，会在当前仓库中生成一个 `gh-pages` 的分支。
 
 ### 4. GitHub Pages and Github Actions
 
@@ -107,73 +99,28 @@ git push -f git@github.com:W1033/Mathematics-learning.git master:gh-pages
 >     - name: vuepress-deploy
 >       uses: jenkey2011/vuepress-deploy@master
 >       env:
->         ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+>         ACCESS_TOKEN: ${{ 你的 token }}
 >         TARGET_REPO: username/repo
 >         TARGET_BRANCH: master
 >         BUILD_SCRIPT: yarn && yarn docs:build
 >         BUILD_DIR: docs/.vuepress/dist
->         CNAME: https://www.xxx.com
+>        
 > ```
 >
 > 详细使用方法，可以看[jenkey2011/vuepress-deploy(opens new window)](https://github.com/jenkey2011/vuepress-deploy/)
 >
-
-
-
-
-
-
-
-### 5. GitHub Pages and Travis CI
-
-> 1. 在 `docs/.vuepress/config.js` 中设置正确的 `base`。
->
->     如果你打算发布到 `https://<USERNAME or GROUP>.github.io/`，则可以省略这一步，因为 `base` 默认即是 `"/"`。
->
->     如果你打算发布到 `https://<USERNAME or GROUP>.github.io/<REPO>/`（也就是说你的仓库在 `https://github.com/<USERNAME>/<REPO>`），则将 `base` 设置为 `"/<REPO>/"`。
->
-> 2. 在项目的根目录创建一个名为 `.travis.yml` 的文件；
->
-> 3. 在本地执行 `yarn` 或 `npm install` 并且提交生成的 lock 文件（即 `yarn.lock` 或 `package-lock.json`）；
->
-> 4. 使用 GitHub Pages 部署提供程序模板并遵循 [Travis 文档 (opens new window)](https://docs.travis-ci.com/user/deployment/pages/)。
->
-> ```yaml
-> language: node_js
-> node_js:
->   - lts/*
-> install:
->   - yarn install # npm ci
-> script:
->   - yarn docs:build # npm run docs:build
-> deploy:
->   provider: pages
->   skip_cleanup: true
->   local_dir: docs/.vuepress/dist
->   github_token: $GITHUB_TOKEN # 在 GitHub 中生成，用于允许 Travis 向你的仓库推送代码。在 Travis 的项目设置页面进行配置，设置为 secure variable
->   keep_history: true
->   on:
->     branch: master
-> ```
->
-> ### [#](https://vuepress.vuejs.org/zh/guide/deploy.html#gitlab-pages-and-gitlab-ci)
-
-
-
-
-
-
 
 ### 4. 验证 gh-pages
 
 ### 5. 设置 website，便于他人访问
 
 
-## P8 08-自定义域名 07:09 
+
+## P8 08-自定义域名 07:09
 
 
 
-## P9 09-启用 PWA 12:17 
+## P9 09-启用 PWA 12:17
 
 
 
